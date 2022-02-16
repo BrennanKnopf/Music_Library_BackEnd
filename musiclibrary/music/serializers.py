@@ -4,7 +4,7 @@ from .models import Song
 class SongSerializer(serializers.ModelSerializer):
     class Meta:
         model = Song
-        fields = ['id', 'title', 'artist', 'album', 'genre', 'release_date']
+        fields = ['id', 'title', 'artist', 'album', 'genre', 'release_date', 'likes']
 
 
     def create(self, validated_data):
@@ -16,5 +16,6 @@ class SongSerializer(serializers.ModelSerializer):
         model.album = validated_data.get('album', model.album)
         model.genre = validated_data.get('genre', model.genre)
         model.release_date = validated_data.get('release_date', model.release_date)
+        model.likes = validated_data.get('likes', model.likes)
         model.save()
         return model
