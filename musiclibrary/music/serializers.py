@@ -15,7 +15,7 @@ class SongSerializer(serializers.ModelSerializer):
         model.artist = validated_data.get('artist', model.artist)
         model.album = validated_data.get('album', model.album)
         model.genre = validated_data.get('genre', model.genre)
-        model.release_date = validated_data.get('release_date', model.release_date)
+        model.releas_date = validated_data.get('release_date', model.release_date)
         model.likes = validated_data.get('likes', model.likes)
         model.save()
         return model
